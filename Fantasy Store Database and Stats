@@ -1,0 +1,25 @@
+-Create a store database.
+
+CREATE TABLE Fantasy_Store (ID INTEGER PRIMARY KEY, Item TEXT, Item_Type TEXT, Weight_LBS INTEGER, Stock INTEGER, Price_Gold INTEGER);
+
+INSERT INTO Fantasy_Store VALUES (1, "SHORT-SWORD", "COMMON", 10, 2, 1);
+INSERT INTO Fantasy_Store VALUES (2, "LONG-SWORD", "COMMON", 15, 5, 2);
+INSERT INTO Fantasy_Store VALUES (3, "POISON", "MAGIC", 2, 10, 3);
+INSERT INTO Fantasy_Store VALUES (4, "HEALING POTION", "MAGIC", 2, 20, 15);
+INSERT INTO Fantasy_Store VALUES (5, "LIGHT CROSSBOW", "COMMON", 5, 10, 2);
+INSERT INTO Fantasy_Store VALUES (6, "HEAVY CROSSBOW", "COMMON", 8, 3, 2);
+INSERT INTO Fantasy_Store VALUES (7, "SPEED POTION", "MAGIC", 0.5, 5, 5);
+INSERT INTO Fantasy_Store VALUES (8, "FIREBALL", "MAGIC", 1, 5, 3);
+INSERT INTO Fantasy_Store VALUES (9, "LIGHT ARMOR", "COMMON", 15, 2, 1);
+INSERT INTO Fantasy_Store VALUES (10, "HEAVY ARMOR", "COMMON", 25, 3, 2);
+INSERT INTO Fantasy_Store VALUES (11, "SCALE MAIL", "RARE", 30, 1, 1);
+INSERT INTO Fantasy_Store VALUES (12, "PLATE ARMOR", "RARE", 45, 1, 1);
+INSERT INTO Fantasy_Store VALUES (13, "BLUE ROBE", "COMMON", 4, 5, 4);
+INSERT INTO Fantasy_Store VALUES (14, "PURPLE ROBE", "RARE", 4, 2, 2);
+INSERT INTO Fantasy_Store VALUES (15, "LEATHER BOOTS", "COMMON", 7, 20, 17);
+
+-Display the database ordered by Price and Stock.
+SELECT Item, Stock, Price_Gold FROM Fantasy_Store WHERE Stock >= 3 ORDER BY Price_Gold;
+
+-How many items total are in stock at the store?
+SELECT SUM(Stock) FROM Fantasy_Store
